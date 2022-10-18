@@ -6,6 +6,8 @@
     --color-four: #777777;
     --color-five: #999999;
     --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -57,6 +59,48 @@ a {
         width: 1170px;
     }
 }
+.main-title {
+    text-transform: uppercase;
+    margin: 0 auto 80px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.main-title::before, .main-title::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: #060606;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::before {
+    left: -30px;
+}
+.main-title::after {
+    right: -30px;
+}
+.main-title:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.main-title:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+}
+
+
 /* Global Rules End  */
 /* Header Start  */
 .header {
@@ -294,6 +338,13 @@ a {
     animation: bouncing 1.5s infinite;
 }
 /* Landing End */
+/* Articles Start  */
+.articles {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+/* Articles End */
 /* Animation Start  */
 @keyframes up-and-down {
     0%, 100% {
@@ -310,5 +361,33 @@ a {
     40%, 60% {
         transform: translateY(20px);
     }
+}
+@keyframes left-move {
+    50% {
+        width: 12px;
+        height: 12px;
+        left: 0;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+    
+}
+@keyframes right-move {
+    50% {
+        width: 12px;
+        height: 12px;
+        right: 0;
+    }
+    100% {
+        border-radius: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+    }
+    
 }
 /* Animation End */
