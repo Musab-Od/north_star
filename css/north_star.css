@@ -601,7 +601,7 @@ a {
     transition: var(--main-transition);
 }
 .team .box::before {
-    width: calc(100% - 60px);
+    width: 100%;
     z-index: -2;
 }
 .team .box::after {
@@ -610,7 +610,7 @@ a {
     width: 0;
 }
 .team .box:hover::after {
-    width: calc(100% - 60px);
+    width: 100%;
 }
 .team .data {
     display: flex;
@@ -620,6 +620,7 @@ a {
 .team .box .data img {
     width: calc(100% - 60px);
     border-radius: 10px;
+    padding-left: 45px;
 }
 .team .box .data .social {
     width: 60px;
@@ -735,6 +736,46 @@ a {
 }
 /* Services End */
 /* Animation Start  */
+/* Client Stats Start  */
+.clients-stats {
+    padding-bottom: var(--main-padding-bottom); 
+    padding-top: var(--main-padding-top);
+    position: relative;
+}
+.clients-stats .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.clients-stats .stats {
+    flex: 1
+}
+.clients-stats .stat h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    text-transform: uppercase;
+}
+.clients-stats .stat h3 span {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+.clients-stats .stat .the-progress {
+    height: 30px;
+    background-color: #ddd;
+    position: relative;
+}
+.clients-stats .stat .the-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--color-one)
+}
+/* Client Stats End */
 @keyframes up-and-down {
     0%, 100% {
         top: 0;
