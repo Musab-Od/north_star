@@ -770,11 +770,16 @@ a {
     padding-bottom: var(--main-padding-bottom); 
     padding-top: var(--main-padding-top);
     position: relative;
+    background-color: black;
 }
 .clients-stats .container {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+}
+@media (max-width: 991px) {
+    .clients-stats img {
+        display: none;
+    }
 }
 .clients-stats .stats {
     flex: 1
@@ -785,6 +790,7 @@ a {
     align-items: center;
     padding: 30px;
     text-transform: uppercase;
+    color: white;
 }
 .clients-stats .stat h3 span {
     font-size: 12px;
@@ -794,7 +800,7 @@ a {
 }
 .clients-stats .stat .the-progress {
     height: 30px;
-    background-color: #ddd;
+    background-color: white;
     position: relative;
 }
 .clients-stats .stat .the-progress span {
@@ -802,7 +808,7 @@ a {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: var(--color-one)
+    background-color: var(--color-three);
 }
 /* Client Stats End */
 /* Work Steps Start  */
