@@ -133,6 +133,26 @@ a {
     border: 2px solid black;
     transition-delay: 0.5s;
 }
+.dots {
+    background-image: url(../media/dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.dots-up {
+    top: 200px;
+    right: 0;
+}
+.dots-down {
+    bottom: 200px;
+    left: 0;
+}
+@media (max-width: 1200px) {
+    .dots {
+        display: none;
+    }
+}
 /* Global Rules End  */
 /* Header Start  */
 .header {
@@ -885,26 +905,6 @@ a {
     padding-top: var(--main-padding-top);
     position: relative;
 }
-.dots {
-    background-image: url(../media/dots.png);
-    height: 186px;
-    width: 204px;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-.dots-up {
-    top: 200px;
-    right: 0;
-}
-.dots-down {
-    bottom: 200px;
-    left: 0;
-}
-@media (max-width: 1200px) {
-    .dots {
-        display: none;
-    }
-}
 .events .container {
     display: flex;
     align-items: center;
@@ -1025,6 +1025,128 @@ a {
     background-color: black;
 }
 /* Events End */
+/* Pricing Start  */
+.pricing {
+    padding-bottom: var(--main-padding-bottom); 
+    padding-top: var(--main-padding-top);
+    position: relative;
+    background-color: var(--section-color);
+}
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.pricing .box {
+    position: relative;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: var(--main-transition);
+    background: white;
+    text-align: center;
+    z-index: 1;
+}
+.pricing .box::before,
+.pricing .box::after {
+    content: "";
+    width: 0;
+    height: 50%;
+    position: absolute;
+    z-index: -1;
+    transition: var(--main-transition);
+    background-color: #f6f6f6;
+}
+.pricing .box::before {
+    left: 0;
+    top: 0;
+}
+.pricing .box::after {
+    right: 0;
+    bottom: 0;
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+    width: 100%;
+}
+@media (min-width: 1200px) {
+    .pricing .box.popular {
+        top: -20px;
+    }
+}
+.pricing .box.popular .label {
+    position: absolute;
+    writing-mode: vertical-rl;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px 35px 10px;
+    font-size: 18px;
+    right: 0px;
+    width: 40px;
+}
+.pricing .box.popular .label::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-color: transparent transparent white;
+    border-width: 20px;
+
+}
+.pricing .box .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0;
+    letter-spacing: -1;
+}
+.pricing .box img {
+    width: 85px;
+    margin-bottom: 30px;
+}
+.pricing .box .price {
+    margin-bottom: 20px;
+}
+.pricing .box .amount {
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black
+}
+.pricing .box .time {
+    color: var(--color-five);
+}
+.pricing .box ul {
+    text-align: left;
+}
+.pricing .box ul li {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+.pricing .box ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    margin-right: 10px;
+    font-weight: 900;
+    color: black;
+}
+.pricing .box a {
+    display: block;
+    width: fit-content;
+    border: 2px solid black;
+    color: var(--color-one);
+    margin: 30px auto 40px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+.pricing .box a:hover {
+    background-color: black;
+    border-color: var(--color-one);
+    color: white;
+}
+/* Pricing End */
 /* Animation Start  */
 @keyframes up-and-down {
     0%, 100% {
