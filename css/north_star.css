@@ -82,17 +82,44 @@ a {
     top: 50%;
     transform: translateY(-50%);
 }
-.main-title::before {
+.main-title-black {
+    text-transform: uppercase;
+    margin: 0 auto 80px;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.main-title-black::before,
+ .main-title-black::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::before,
+.main-title-black::before {
     left: -30px;
 }
-.main-title::after {
+.main-title::after,
+.main-title-black::after  {
     right: -30px;
 }
-.main-title:hover::before {
+.main-title:hover::before,
+.main-title-black:hover:before {
     z-index: -1;
     animation: left-move 0.5s linear forwards;
 }
-.main-title:hover::after {
+.main-title:hover::after,
+.main-title-black:hover::after {
     z-index: -1;
     animation: right-move 0.5s linear forwards;
 }
@@ -101,8 +128,11 @@ a {
     border: 2px solid white;
     transition-delay: 0.5s;
 }
-
-
+.main-title-black:hover {
+    color: black;
+    border: 2px solid black;
+    transition-delay: 0.5s;
+}
 /* Global Rules End  */
 /* Header Start  */
 .header {
@@ -735,7 +765,6 @@ a {
     color: var(--color-one);
 }
 /* Services End */
-/* Animation Start  */
 /* Client Stats Start  */
 .clients-stats {
     padding-bottom: var(--main-padding-bottom); 
@@ -744,7 +773,7 @@ a {
 }
 .clients-stats .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 .clients-stats .stats {
@@ -776,6 +805,75 @@ a {
     background-color: var(--color-one)
 }
 /* Client Stats End */
+/* Work Steps Start  */
+.work-steps {
+    background-color: black;
+    padding-bottom: var(--main-padding-bottom); 
+    padding-top: var(--main-padding-top);
+    position: relative;
+}
+.work-steps .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
+.work-steps .img {
+    max-width: 100%;
+    margin-right: 100px;
+}
+@media (max-width: 767px) {
+    .work-steps .img {
+        margin-right: 0;
+    }
+}
+.work-steps .info .box {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+.work-steps .info .box::before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-one);
+    z-index: -1;
+    transition: var(--main-transition);
+}
+.work-steps .info .box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+.work-steps .info .box i {
+    margin-right: 30px;
+    color: white;
+}
+.work-steps .info .box h3 {
+    margin: 0;
+    font-size: 22px;
+    color: white;
+}
+.work-steps .info .box p {
+    color: var(--color-four);
+    line-height: 1.7;
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+/* Work Steps End */
+/* Animation Start  */
 @keyframes up-and-down {
     0%, 100% {
         top: 0;
