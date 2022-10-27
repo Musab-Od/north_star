@@ -7,3 +7,6 @@ Most of the Porblems I Faced During Making it were Choosing the Pictures to matc
 It Contains 15 Sections: Header, Landing, Articles, Gallery, Features, Testimonials, Team Members, Services, Client Stats, Work Steps, Events, Pricing, Videos, Stats, And Footer.
 i'd like to Thank Engineer Osama Mohammed AKA: Elzero (elzero.org) For His Youtube CSS Course That Helped Me a lot with the Design.
 And Of Course The Odin Project Which Motivated Me to Enter The Field Of Web Development.
+
+demo:
+https://musab-od.github.io/north_star/
